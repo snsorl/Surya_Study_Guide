@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainee Exercise: Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Palette Creator</h1>
+        <p>Enter a hex color code to add a color block card to your active dashboard.</p>
+        
+        <form id="color-form">
+            <input type="text" id="color-input" placeholder="#ff0000" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
+            <button type="submit">Add Color</button>
+        </form>
+
+        <div id="palette-grid" class="grid-container">
+            <!-- Dynamic color cards will be appended here -->
+        </div>
+    </div>
+
+    <!-- Implement logic here or in separate file -->
+    <script>
+        "use strict";
+        
+        const form = document.querySelector("#color-form");
+        const input = document.querySelector("#color-input");
+        const grid = document.querySelector("#palette-grid");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent page reload
+            
+            const colorCode = input.value.trim();
+            
+            // TODO: Implement Dynamic Card Creation
+            // 1. Create a div wrapper card (.color-card)
+            // 2. Set style.backgroundColor to the colorCode
+            // 3. Insert a text label containing the hex code value
+            // 4. Create a button (.delete-btn) to allow deleting the card
+            // 5. Append the card to the #palette-grid container
+            
+            input.value = ""; // Reset input
+        });
+
+        // TODO: Implement Event Delegation on 'grid' to handle card deletion
+        grid.addEventListener("click", (event) => {
+            // Check if the clicked target matches your delete button selector
+            // Delete the matching parent color-card
+        });
+    </script>
+</body>
+</html>

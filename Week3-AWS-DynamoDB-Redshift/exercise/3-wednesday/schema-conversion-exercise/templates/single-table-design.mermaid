@@ -1,0 +1,37 @@
+---
+title: Library Single-Table Design
+description: DynamoDB single-table layout showing Member, Book, and Loan entities coexisting.
+---
+
+%%
+  Complete this diagram by replacing every [?] placeholder with a real value or expression.
+  Instructions:
+    - Row 1 must be a Member METADATA item
+    - Rows 2-3 must be Loan items belonging to the same member as Row 1
+    - Rows 4-5 must be Book items
+  When finished, verify the diagram renders correctly in a Mermaid viewer.
+%%
+
+erDiagram
+    LIBRARY_TABLE {
+        string PK           "Partition Key"
+        string SK           "Sort Key"
+        string entity_type  "MEMBER | BOOK | LOAN"
+        string attributes   "Entity-specific fields"
+    }
+
+%%
+  Replace the block below with a Mermaid block diagram (block-beta)
+  showing example rows in the single table. Use the template rows as a guide.
+
+  Example format (replace all [?] fields):
+
+  block-beta
+    columns 5
+    PK["PK (Partition Key)"] SK["SK (Sort Key)"] EntityType["entity_type"] Attr1["Attribute 1"] Attr2["Attribute 2"]
+    m1pk["MEMBER#M-001"] m1sk["METADATA"] m1e["MEMBER"] m1a["full_name: Alice Nguyen"] m1b["tier: PREMIUM"]
+    l1pk["[?]"]           l1sk["[?]"]      l1e["LOAN"]   l1a["[?]"]                      l1b["[?]"]
+    l2pk["[?]"]           l2sk["[?]"]      l2e["LOAN"]   l2a["[?]"]                      l2b["[?]"]
+    b1pk["[?]"]           b1sk["[?]"]      b1e["BOOK"]   b1a["[?]"]                      b1b["[?]"]
+    b2pk["[?]"]           b2sk["[?]"]      b2e["BOOK"]   b2a["[?]"]                      b2b["[?]"]
+%%
